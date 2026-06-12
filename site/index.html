@@ -225,6 +225,34 @@
       <span class="kicker">04 · Open source</span>
       <h2 class="nyx-h1">Tout ce qui est dans NYX<br />est lisible par toi.</h2>
 
+      <p class="lede">
+        Voici comment chaque pièce se voit. NYX est aussi un design system :
+        tokens couleur, motion, typo partagés entre les produits.
+      </p>
+
+      <div class="logo-grid">
+        <div class="logo-card">
+          <strong>Logo horizontal · default</strong>
+          <code><nyx-logo size="48"></nyx-logo></code>
+          <nyx-logo size="48"></nyx-logo>
+        </div>
+        <div class="logo-card">
+          <strong>Mark seul</strong>
+          <code><nyx-logo size="64" variant="mark"></code>
+          <nyx-logo size="64" variant="mark"></nyx-logo>
+        </div>
+        <div class="logo-card">
+          <strong>Theme cyan</strong>
+          <code><nyx-logo size="80" theme="cyan"></code>
+          <nyx-logo size="80" theme="cyan"></nyx-logo>
+        </div>
+        <div class="logo-card">
+          <strong>Theme violet</strong>
+          <code><nyx-logo size="96" theme="violet"></code>
+          <nyx-logo size="96" theme="violet"></nyx-logo>
+        </div>
+      </div>
+
       <div class="oss-grid">
         <a class="oss-card" href="https://github.com/lvs0/vortex" target="_blank">
           <div class="oss-head">
@@ -295,5 +323,8 @@
   <!-- Three.js + ScrollMagic-like observer -->
   <script src="https://unpkg.com/[email protected]/build/three.min.js"></script>
   <script src="site.js"></script>
+
+  <!-- Demo: Web Components -->
+  <script src="../components/nyx-logo.html"></script>
 </body>
 </html>
