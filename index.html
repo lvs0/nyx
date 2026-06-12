@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../brand/tokens.css" />
+  <link rel="stylesheet" href="brand/tokens.css" />
   <link rel="stylesheet" href="site.css" />
 </head>
 <body data-protocol="nyx">
@@ -23,7 +23,7 @@
 
     <header class="nav">
       <a href="/" class="brand">
-        <img src="../brand/logo-horizontal.svg" alt="NYX" class="brand-mark" />
+        <img src="brand/logo-horizontal.svg" alt="NYX" class="brand-mark" />
       </a>
       <nav class="nav-links">
         <a href="#ecosystem">Écosystème</a>
@@ -109,7 +109,7 @@
               <li>4 architectures</li>
               <li>Métriques live</li>
             </ul>
-            <a href="../symbiote/simulator/index.html" class="prod-link">Simuler →</a>
+            <a href="https://lvs0.github.io/symbiote/" class="prod-link">Simuler →</a>
           </div>
         </article>
 
@@ -254,7 +254,7 @@
       </div>
 
       <div class="oss-grid">
-        <a class="oss-card" href="https://github.com/lvs0/vortex" target="_blank">
+        <a href="https://github.com/lvs0/vortex" target="_blank" rel="noopener noreferrer" class="oss-card">
           <div class="oss-head">
             <h3>Vortex Engine</h3>
             <span class="oss-lang">Rust</span>
@@ -262,7 +262,7 @@
           <p>Patch Windows bas-niveau. Moteur d'optimisation système.</p>
           <div class="oss-meta">⭐ 1 · 100% open · MIT</div>
         </a>
-        <a class="oss-card" href="https://github.com/lvs0/symbiote" target="_blank">
+        <a class="oss-card" href="https://github.com/lvs0/symbiote" target="_blank" rel="noopener noreferrer">
           <div class="oss-head">
             <h3>Symbiote</h3>
             <span class="oss-lang">JS · GLSL</span>
@@ -288,7 +288,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <img src="../brand/logo-horizontal.svg" alt="NYX" />
+          <img src="brand/logo-horizontal.svg" alt="NYX" />
           <p>L'écosystème des nuits productives.<br />
              Cinq produits. Une seule souveraineté.</p>
         </div>
@@ -296,7 +296,7 @@
           <div>
             <h5>Produits</h5>
             <a href="https://github.com/lvs0/vortex">Vortex</a>
-            <a href="../symbiote/simulator/index.html">Symbiote</a>
+            <a href="symbiote/simulator/index.html">Symbiote</a>
             <a href="#">Aegis</a>
             <a href="#">Nyx-IA</a>
           </div>
@@ -325,6 +325,6 @@
   <script src="site.js"></script>
 
   <!-- Demo: Web Components -->
-  <script src="../components/nyx-logo.html"></script>
+  <script src="components/nyx-logo.html" defer></script>
 </body>
 </html>
