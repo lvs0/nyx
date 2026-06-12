@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>NYX Components Gallery</title>
+  <link rel="stylesheet" href="brand/tokens.css">
+  <link rel="stylesheet" href="components/nyx-components.css">
+  <style>
+    body { background: var(--nyx-void, #05060a); color: var(--nyx-snow, #e7ebf5); font-family: var(--nyx-font-sans, system-ui); padding: 60px; max-width: 920px; margin: 0 auto; }
+    h1 { font-family: var(--nyx-font-display, serif); font-weight: 300; letter-spacing: -0.02em; font-size: 48px; background: linear-gradient(135deg, #00f5d4, #9d4edd, #ff3d8c); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+    h2 { font-family: var(--nyx-font-display, serif); font-weight: 300; margin-top: 48px; }
+    section { margin: 48px 0; padding: 24px; background: var(--nyx-ink, #0b0d14); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+    code { font-family: var(--nyx-font-mono, monospace); background: rgba(255,255,255,0.04); padding: 4px 8px; border-radius: 4px; font-size: 12.5px; color: var(--nyx-cyan, #00f5d4); }
+    pre { background: rgba(0,0,0,0.4); padding: 16px; border-radius: 8px; overflow-x: auto; font-size: 12.5px; }
+    .row { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; padding: 16px 0; }
+    .row > * { margin: 0; }
+
+    /* Tabs */
+    nyx-tabs { display: block; }
+    .nyx-tabs-root [slot="tab"] {
+      background: transparent;
+      border: 0;
+      color: var(--nyx-mist, #444c63);
+      padding: 12px 18px;
+      font-family: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 200ms;
+    }
+    .nyx-tabs-root [slot="tab"]:hover { color: var(--nyx-bone, #b3b9cb); }
+    .nyx-tabs-root [slot="tab"].is-active {
+      color: var(--nyx-cyan);
+      border-bottom-color: var(--nyx-cyan);
+    }
+    .nyx-tabs-root .nyx-tab-panel { display: none; padding: 24px 0; }
+    .nyx-tabs-root .nyx-tab-panel.is-active { display: block; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html" style="color: var(--nyx-bone); text-decoration: none;">← écosystème</a></p>
+
+  <h1>NYX Components</h1>
+  <p style="color: var(--nyx-bone); font-size: 17px;">Les briques natives du design system NYX. Zéro dépendance, vanilla ES2022, ARIA-correct.</p>
+
+  <h2><nyx-logo></h2>
+  <p style="color: var(--nyx-bone);">Le logo NYX en SVG natif. 3 thèmes de gradient.</p>
+  <section>
+    <div class="row">
+      <div><code><nyx-logo size="48"></code></div>
+      <nyx-logo size="48"></nyx-logo>
+      <div><code>size="64" variant="mark"</code></div>
+      <nyx-logo size="64" variant="mark"></nyx-logo>
+      <div><code>size="80" theme="cyan"</code></div>
+      <nyx-logo size="80" theme="cyan"></nyx-logo>
+      <div><code>size="96" theme="violet"</code></div>
+      <nyx-logo size="96" theme="violet"></nyx-logo>
+    </div>
+  </section>
+
+  <h2><nyx-stat></h2>
+  <section>
+    <div class="row" style="gap: 36px;">
+      <nyx-stat value="5" label="produits"></nyx-stat>
+      <nyx-stat value="0" label="tiers"></nyx-stat>
+      <nyx-stat value="9999" label="jours"></nyx-stat>
+      <nyx-stat value="100" unit="%" label="open-source"></nyx-stat>
+    </div>
+  </section>
+
+  <h2><nyx-button></h2>
+  <section>
+    <div class="row">
+      <nyx-button variant="primary">Action primaire</nyx-button>
+      <nyx-button variant="ghost">Annuler</nyx-button>
+      <nyx-button variant="electric" href="https://github.com/lvs0/nyx">Électrique (GITHUB)</nyx-button>
+      <nyx-button variant="primary" disabled>Désactivé</nyx-button>
+    </div>
+  </section>
+
+  <h2><nyx-rule></h2>
+  <p style="color: var(--nyx-bone);">Ligne animée dessinée à l'intersection avec la viewport.</p>
+  <section>
+    <nyx-rule color="cyan"></nyx-rule>
+    Texte entre les règles.
+    <nyx-rule color="violet"></nyx-rule>
+    Encore.
+    <nyx-rule color="magenta"></nyx-rule>
+  </section>
+
+  <h2><nyx-tabs></h2>
+  <p style="color: var(--nyx-bone);">Navigation par onglets avec keyboard (flèches gauche/droite) et ARIA-correct.</p>
+  <section>
+    <nyx-tabs>
+      <button slot="tab" data-target="vision">Vision</button>
+      <button slot="tab" data-target="postulat">Postulat</button>
+      <button slot="tab" data-target="manifeste">Manifeste</button>
+      <div slot="panel" data-id="vision">
+        <h3 style="margin-top: 0;">Vision</h3>
+        <p style="color: var(--nyx-bone);">Un écosystème où chaque produit te ressemble parce qu'il n'a pas de tiers.</p>
+      </div>
+      <div slot="panel" data-id="postulat">
+        <h3 style="margin-top: 0;">Postulat</h3>
+        <p style="color: var(--nyx-bone);">Si un produit doit envoyer tes données ailleurs pour fonctionner, ce produit n'est pas fini.</p>
+      </div>
+      <div slot="panel" data-id="manifeste">
+        <h3 style="margin-top: 0;">Manifeste</h3>
+        <p style="color: var(--nyx-bone);">Nous ne gagnerons pas contre les géants en copiant leurs méthodes.</p>
+      </div>
+    </nyx-tabs>
+  </section>
+
+  <h2>Comment importer</h2>
+  <pre>// 1. Web component loader (à inclure en <head> defer)
+<script type="module" src="https://lvs0.github.io/nyx/components/nyx-logo.js"></script>
+<script src="https://lvs0.github.io/nyx/components/nyx-stat.js" defer></script>
+...
+
+// Style partagé (optionnel mais recommandé)
+<link rel="stylesheet" href="https://lvs0.github.io/nyx/components/nyx-components.css" /></pre>
+
+  <h2>Tokens utilisés</h2>
+  <p style="color: var(--nyx-bone);">Tous les composants respectent les <a href="brand/tokens.css" style="color: var(--nyx-cyan);">--nyx-* tokens</a>. Tu peux les surcharger pour adapter le branding à un fork.</p>
+
+  <p style="margin-top: 80px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); color: var(--nyx-mist); font-family: var(--nyx-font-mono, monospace); font-size: 11px;">
+    NYX Lévy & Zoe · 12-13 juin 2026 · MIT · <a href="index.html" style="color: var(--nyx-bone);">← écosystème</a>
+  </p>
+
+  <script type="module" src="components/nyx-logo.js"></script>
+  <script src="components/nyx-stat.js" defer></script>
+  <script src="components/nyx-button.js" defer></script>
+  <script src="components/nyx-rule.js" defer></script>
+  <script src="components/nyx-tabs.js" defer></script>
+</body>
+</html>
