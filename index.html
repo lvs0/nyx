@@ -47,8 +47,12 @@
   <link rel="stylesheet" href="brand/tokens.css?v=942bbda5" />
   <link rel="stylesheet" href="site.css?v=d9943ec5" />
   <link rel="stylesheet" href="components/nyx-modal.css?v=1" />
+  <link rel="stylesheet" href="components/nyx-components.css?v=1" />
   <script src="components/nyx-logo.js?v=f98b08c2" defer></script>
   <script src="components/nyx-modal.js?v=1" defer></script>
+  <script src="components/nyx-button.js?v=1" defer></script>
+  <script src="components/nyx-stat.js?v=1" defer></script>
+  <script src="components/nyx-rule.js?v=1" defer></script>
 </head>
 <body data-protocol="nyx">
 
@@ -68,6 +72,7 @@
         <a href="#ecosystem">Écosystème</a>
         <a href="#vision">Manifeste</a>
         <a href="#opensource">Open source</a>
+        <a href="roadmap.html">Roadmap</a>
         <a href="https://github.com/lvs0" class="btn btn--ghost">GitHub ↗</a>
       </nav>
     </header>
@@ -90,10 +95,10 @@
       </div>
 
       <div class="hero-stats">
-        <div><b>5</b><span>produits interconnectés</span></div>
-        <div><b>0</b><span>tiers ayant accès à tes données</span></div>
-        <div><b>∞</b><span>durée de conservation</span></div>
-        <div><b>0 €</b><span>pour commencer</span></div>
+        <nyx-stat value="5" label="produits interconnectés"></nyx-stat>
+        <nyx-stat value="0" label="tiers ayant accès à tes données"></nyx-stat>
+        <nyx-stat value="9999" label="jours de conservation garantis"></nyx-stat>
+        <nyx-stat value="0" label="€ pour commencer" unit="€"></nyx-stat>
       </div>
     </div>
 
@@ -214,7 +219,10 @@
   <section id="vision" class="section manifest">
     <div class="container narrow">
       <span class="kicker">03 · Manifeste</span>
-      <h2 class="nyx-h1">Pourquoi ce n'est pas un effet de mode.</h2>
+      <div class="rm-cta-row">
+        <h2 class="nyx-h1">Pourquoi ce n'est pas un effet de mode.</h2>
+        <a href="roadmap.html" class="rm-pill">→ Roadmap v0.1</a>
+      </div>
 
       <div class="manifest-body">
         <p class="big-quote">

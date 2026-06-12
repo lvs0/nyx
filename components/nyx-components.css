@@ -1,0 +1,117 @@
+/* Component styles — to be loaded alongside nyx-*.js */
+
+/* NyxButton */
+.nyx-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 200ms,
+              background 240ms,
+              border-color 240ms,
+              color 240ms;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  text-decoration: none;
+}
+.nyx-btn--primary {
+  background: var(--nyx-cyan, #00f5d4);
+  color: var(--nyx-void, #05060a);
+  box-shadow: 0 4px 16px rgba(0, 245, 212, 0.25);
+}
+.nyx-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0, 245, 212, 0.45);
+}
+.nyx-btn--ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--nyx-snow, #e7ebf5);
+}
+.nyx-btn--ghost:hover { border-color: var(--nyx-cyan); color: var(--nyx-cyan); transform: translateY(-1px); }
+
+.nyx-btn--electric {
+  background: linear-gradient(135deg, #00f5d4 0%, #9d4edd 50%, #ff3d8c 100%);
+  background-size: 200% 100%;
+  color: var(--nyx-void, #05060a);
+  animation: btn-shimmer 5s linear infinite;
+}
+.nyx-btn--electric:hover {
+  animation-duration: 1.6s;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(157, 78, 221, 0.4);
+}
+
+.nyx-btn.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@keyframes btn-shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* NyxStat */
+.nyx-stat-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nyx-stat-value-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.nyx-stat-value {
+  font-family: var(--nyx-font-mono, monospace);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--nyx-cyan, #00f5d4);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.nyx-stat-unit {
+  font-family: var(--nyx-font-mono, monospace);
+  font-size: 14px;
+  color: var(--nyx-mist, #444c63);
+  font-weight: 500;
+}
+.nyx-stat-label {
+  font-family: var(--nyx-font-mono, monospace);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--nyx-mist, #444c63);
+}
+
+/* NyxRule */
+nyx-rule {
+  display: block;
+  position: relative;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.04);
+  margin: 32px 0;
+  overflow: hidden;
+}
+.nyx-rule-fill {
+  position: absolute;
+  inset: 0;
+  width: 0;
+  transition: width 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+nyx-rule.in .nyx-rule-fill { width: 100%; }
+.nyx-rule-fill--cyan { background: linear-gradient(90deg, transparent, var(--nyx-cyan, #00f5d4), transparent); }
+.nyx-rule-fill--violet { background: linear-gradient(90deg, transparent, var(--nyx-violet, #9d4edd), transparent); }
+.nyx-rule-fill--magenta { background: linear-gradient(90deg, transparent, var(--nyx-magenta, #ff3d8c), transparent); }
+.nyx-rule-fill--amber { background: linear-gradient(90deg, transparent, var(--nyx-amber, #fcbf49), transparent); }

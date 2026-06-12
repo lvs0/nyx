@@ -230,3 +230,90 @@
     });
   }
 })();
+
+  // ───────────── KINETIC TEXT : brik.space-level char reveal 3D ─────────────
+  function makeCharSpans(el) {
+    if (el.dataset.charized === '1') return;
+    el.dataset.charized = '1';
+    const text = el.textContent;
+    el.textContent = '';
+    el.style.display = 'inline-block';
+    el.style.perspective = '1200px';
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      const span = document.createElement('span');
+      span.textContent = ch === ' ' ? '\u00A0' : ch;
+      span.style.display = 'inline-block';
+      span.style.transform = 'translateY(0.6em) rotateX(-60deg)';
+      span.style.opacity = '0';
+      span.style.transition = 'transform 1100ms cubic-bezier(0.16, 1, 0.3, 1), opacity 700ms cubic-bezier(0.16, 1, 0.3, 1)';
+      span.style.willChange = 'transform, opacity';
+      span.style.transformOrigin = '50% 100%';
+      span.dataset.idx = i;
+      el.appendChild(span);
+    }
+  }
+
+  function revealChars(el, baseDelay = 0) {
+    makeCharSpans(el);
+    const spans = el.querySelectorAll(':scope > span');
+    spans.forEach((s, i) => {
+      setTimeout(() => {
+        s.style.transform = 'translateY(0) rotateX(0)';
+        s.style.opacity = '1';
+      }, baseDelay + i * 22);
+    });
+  }
+
+  // Wire it on hero title gradient words
+  const heroGradient = document.querySelectorAll('.hero-title .nyx-italic-gradient, .hero-title b');
+  // Wrap each character for kinetic reveal
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) {
+    // observer pour ne s'activer qu'à l'affichage
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          // wrap et reveal
+          // process tout le h1 sauf les word "zoom"
+          const targets = heroTitle.querySelectorAll(':scope > span, :scope > b, :scope > br, :scope > text');
+          // split text nodes only
+          const process = (node) => {
+            if (node.nodeType === 3) {
+              const text = node.textContent;
+              const tmp = document.createElement('span');
+              tmp.className = 'nyx-kinetic';
+              tmp.textContent = text;
+              const parent = node.parentNode;
+              parent.insertBefore(tmp, node);
+              tmp.style.display = 'inline-block';
+              tmp.style.perspective = '1200px';
+              tmp.textContent = '';
+              for (let i = 0; i < text.length; i++) {
+                const ch = text[i];
+                const span = document.createElement('span');
+                span.textContent = ch === ' ' ? '\u00A0' : ch;
+                span.style.display = 'inline-block';
+                span.style.transform = 'translateY(0.7em) rotateX(-65deg)';
+                span.style.opacity = '0';
+                span.style.transition = 'transform 1000ms cubic-bezier(0.16, 1, 0.3, 1), opacity 700ms cubic-bezier(0.16, 1, 0.3, 1)';
+                tmp.appendChild(span);
+                setTimeout(() => {
+                  span.style.transform = 'translateY(0) rotateX(0)';
+                  span.style.opacity = '1';
+                }, 500 + i * 18);
+              }
+              parent.removeChild(node);
+            }
+          };
+          // pour chaque enfant direct du hero-title qui est un text node, process
+          const walker = document.createTreeWalker(heroTitle, NodeFilter.SHOW_TEXT, null, false);
+          const textNodes = [];
+          let n; while ((n = walker.nextNode())) textNodes.push(n);
+          textNodes.forEach(process);
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    io.observe(heroTitle);
+  }
