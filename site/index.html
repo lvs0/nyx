@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="NYX — un écosystème natif pour celles et ceux qui refusent de confier leurs données à des tiers. OS, cloud chiffré, IA, navigateur, simulateur matériel. Tout a un seul propriétaire : toi." />
+  <title>NYX — Cinq produits. Une seule souveraineté.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../brand/tokens.css" />
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body data-protocol="nyx">
+
+  <!-- ─────────────── HERO ─────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grain"></div>
+      <div class="hero-grid"></div>
+      <canvas id="hero-canvas"></canvas>
+    </div>
+
+    <header class="nav">
+      <a href="/" class="brand">
+        <img src="../brand/logo-horizontal.svg" alt="NYX" class="brand-mark" />
+      </a>
+      <nav class="nav-links">
+        <a href="#ecosystem">Écosystème</a>
+        <a href="#vision">Manifeste</a>
+        <a href="#opensource">Open source</a>
+        <a href="https://github.com/lvs0" class="btn btn--ghost">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <div class="hero-content">
+      <span class="kicker">NYX · écosystème v0.1 · 12 juin 2026</span>
+      <h1 class="nyx-display hero-title">
+        Cinq produits.<br />
+        <span class="nyx-italic-gradient">Une seule souveraineté.</span>
+      </h1>
+      <p class="lede">
+        NYX est une constellation&nbsp;: un système d'exploitation qui parle
+        bas-niveau, un cloud chiffré, une IA personnelle, un navigateur
+        comme medium et un simulateur matériel. Tout est à toi, tout
+        fonctionne ensemble, rien n'appartient à personne d'autre.
+      </p>
+      <div class="hero-cta">
+        <a href="#ecosystem" class="btn btn--primary">Voir l'écosystème ↓</a>
+        <a href="#vision" class="btn btn--ghost">Lire le manifeste</a>
+      </div>
+
+      <div class="hero-stats">
+        <div><b>5</b><span>produits interconnectés</span></div>
+        <div><b>0</b><span>tiers ayant accès à tes données</span></div>
+        <div><b>∞</b><span>durée de conservation</span></div>
+        <div><b>0 €</b><span>pour commencer</span></div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Dérouler</span>
+      <svg width="14" height="40" viewBox="0 0 14 40">
+        <line x1="7" y1="0" x2="7" y2="32" stroke="currentColor" stroke-width="1" />
+        <path d="M 2 28 L 7 33 L 12 28" stroke="currentColor" stroke-width="1" fill="none" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ─────────────── ÉCOSYSTÈME ─────────────── -->
+  <section id="ecosystem" class="section">
+    <div class="container">
+      <span class="kicker">02 · Écosystème</span>
+      <h2 class="nyx-h1 ecosystem-title">
+        Cinq monolithes,<br />
+        un seul système.
+      </h2>
+      <p class="lede">
+        Chacun de nos produits est construit sur le même postulat&nbsp;: tu n'as
+        rien à déléguer. Personne ne sait mieux que ton propre matériel ce
+        qu'il doit faire.
+      </p>
+
+      <div class="grid-products">
+
+        <article class="product" data-prod="vortex">
+          <div class="product-canvas" data-canvas="vortex"></div>
+          <div class="product-content">
+            <span class="prod-tag">01 · OS</span>
+            <h3 class="prod-name">Vortex</h3>
+            <p>L'optimiseur natif Windows qui repense le pipeline GPU, RAM et scheduler — un patch en Rust qui transforme ta machine sans la réécrire.</p>
+            <ul class="prod-specs">
+              <li>RT backend (Rust)</li>
+              <li>5 ms appli moyenne</li>
+              <li>NSIS · 6 Mo</li>
+            </ul>
+            <a href="https://github.com/lvs0/vortex" class="prod-link">Repo →</a>
+          </div>
+        </article>
+
+        <article class="product" data-prod="symbiote">
+          <div class="product-canvas" data-canvas="symbiote"></div>
+          <div class="product-content">
+            <span class="prod-tag">02 · Simulation</span>
+            <h3 class="prod-name">Symbiote</h3>
+            <p>Un simulateur matériel pour visualiser 4 prototypes de l'ère symbiotique&nbsp;: silicium vivant, maillage décentralisé, HBM+TMFC, neurmorphique.</p>
+            <ul class="prod-specs">
+              <li>WebGL + Three.js</li>
+              <li>4 architectures</li>
+              <li>Métriques live</li>
+            </ul>
+            <a href="../symbiote/simulator/index.html" class="prod-link">Simuler →</a>
+          </div>
+        </article>
+
+        <article class="product" data-prod="aegis">
+          <div class="product-canvas" data-canvas="aegis"></div>
+          <div class="product-content">
+            <span class="prod-tag">03 · Cloud</span>
+            <h3 class="prod-name">Aegis</h3>
+            <p>Cloud chiffré de bout en bout&nbsp;: ML-KEM-1024 du projet Polygone. Tes fichiers n'existent qu'à toi, nulle part ailleurs, dans aucune copie lisible.</p>
+            <ul class="prod-specs">
+              <li>Post-quantique</li>
+              <li>Shamir 4/7</li>
+              <li>Zero-knowledge</li>
+            </ul>
+            <a href="#" class="prod-link">Bientôt →</a>
+          </div>
+        </article>
+
+        <article class="product" data-prod="nyxia">
+          <div class="product-canvas" data-canvas="nyxia"></div>
+          <div class="product-content">
+            <span class="prod-tag">04 · Assistant</span>
+            <h3 class="prod-name">Nyx-IA</h3>
+            <p>Une IA qui te ressemble parce qu'elle tourne chez toi. Pas d'API distante, pas de logging tier, pas de "machine learning on your data".</p>
+            <ul class="prod-specs">
+              <li>Local-first</li>
+              <li>Souverain</li>
+              <li>No telemetry</li>
+            </ul>
+            <a href="#" class="prod-link">Roadmap →</a>
+          </div>
+        </article>
+
+        <article class="product" data-prod="browser">
+          <div class="product-canvas" data-canvas="browser"></div>
+          <div class="product-content">
+            <span class="prod-tag">05 · Navigation</span>
+            <h3 class="prod-name">Nyx-Browser</h3>
+            <p>Un navigateur qui ne te profile pas. Le web comme medium, pas comme piège. Première target&nbsp;: ta bande passante et ton intention.</p>
+            <ul class="prod-specs">
+              <li>No tracking</li>
+              <li>DPI-aware</li>
+              <li>Privacy by design</li>
+            </ul>
+            <a href="#" class="prod-link">Concept →</a>
+          </div>
+        </article>
+
+        <article class="product product-cta">
+          <div class="product-content">
+            <span class="prod-tag">06 · Bonus</span>
+            <h3 class="prod-name">Sixième à inventer</h3>
+            <p>Il manque quelque chose. On ne sait pas encore quoi. Tu sens&nbsp;? Construisons.</p>
+            <a href="#vision" class="prod-cta-link">Proposer →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── MANIFESTE ─────────────── -->
+  <section id="vision" class="section manifest">
+    <div class="container narrow">
+      <span class="kicker">03 · Manifeste</span>
+      <h2 class="nyx-h1">Pourquoi ce n'est pas un effet de mode.</h2>
+
+      <div class="manifest-body">
+        <p class="big-quote">
+          «&nbsp;On vous a appris à déléguer.
+          On vous a appris à <em>consommer</em>.
+          On vous a appris que votre mémoire, votre temps, votre attention,
+          vos photos, vos documents, vos messages, vos courriels, vos calculs,
+          vos intuitions n'étaient plus votre problème.
+          »</p>
+        <p>
+          Nous ne sommes pas d'accord. Et nous ne gagnerons pas contre les
+          géants du web en copiant leurs méthodes. Nous gagnerons en
+          redonnant <strong>une seule chose</strong>&nbsp;: la propriété
+          effective de ce qui vient de toi.
+        </p>
+
+        <h3 class="nyx-h3">Notre postulat</h3>
+        <p>
+          Si un produit a besoin d'envoyer tes données quelque part pour
+          fonctionner, ce produit n'est pas fini. Si une interface a besoin
+          d'un cookie pour s'afficher, elle devrait mourir. Si une IA ne peut
+          pas tourner sur ton propre matériel, ce n'est pas la bonne IA.
+        </p>
+
+        <h3 class="nyx-h3">Pourquoi maintenant</h3>
+        <p>
+          Parce que les nouveaux outils — modèles open-source, politiques
+          post-quantiques, hardware accessible, communautés distribuées —
+          rendent possibles ce qui ne l'était pas il y a trois ans. Et parce
+          que ce qui n'est plus possible, c'est d'attendre.
+        </p>
+
+        <h3 class="nyx-h3">Pourquoi NYX plutôt que notre nom</h3>
+        <p>
+          Parce que NYX est notre nom. Et parce que la métaphore est juste&nbsp;:
+          la nuit n'est pas le vide. C'est ce qui rend la lumière lisible.
+        </p>
+
+        <p class="signature">— Lévy & Zoe, 12 juin 2026, Paris.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── OPEN SOURCE ─────────────── -->
+  <section id="opensource" class="section">
+    <div class="container">
+      <span class="kicker">04 · Open source</span>
+      <h2 class="nyx-h1">Tout ce qui est dans NYX<br />est lisible par toi.</h2>
+
+      <div class="oss-grid">
+        <a class="oss-card" href="https://github.com/lvs0/vortex" target="_blank">
+          <div class="oss-head">
+            <h3>Vortex Engine</h3>
+            <span class="oss-lang">Rust</span>
+          </div>
+          <p>Patch Windows bas-niveau. Moteur d'optimisation système.</p>
+          <div class="oss-meta">⭐ 1 · 100% open · MIT</div>
+        </a>
+        <a class="oss-card" href="https://github.com/lvs0/symbiote" target="_blank">
+          <div class="oss-head">
+            <h3>Symbiote</h3>
+            <span class="oss-lang">JS · GLSL</span>
+          </div>
+          <p>Le simulateur 3D de l'ère simbiotique + sa landing matériau.</p>
+          <div class="oss-meta">⭐ 1 · MIT · 0 build</div>
+        </a>
+        <!-- Future -->
+        <div class="oss-card ghost">
+          <div class="oss-head">
+            <h3>Aegis</h3>
+            <span class="oss-lang">Rust + WASM</span>
+          </div>
+          <p>Le cloud chiffré ML-KEM-1024. Bientôt.</p>
+          <div class="oss-meta">⚠ Préparation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── FOOTER ─────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="../brand/logo-horizontal.svg" alt="NYX" />
+          <p>L'écosystème des nuits productives.<br />
+             Cinq produits. Une seule souveraineté.</p>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <h5>Produits</h5>
+            <a href="https://github.com/lvs0/vortex">Vortex</a>
+            <a href="../symbiote/simulator/index.html">Symbiote</a>
+            <a href="#">Aegis</a>
+            <a href="#">Nyx-IA</a>
+          </div>
+          <div>
+            <h5>Ressources</h5>
+            <a href="#vision">Manifeste</a>
+            <a href="https://github.com/lvs0/nyx">Brand kit</a>
+            <a href="https://github.com/lvs0/nyx/blob/main/brand/BRAND-BOOK.md">Brand book</a>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <a href="https://t.me/l_vs">Telegram</a>
+            <a href="https://github.com/lvs0">GitHub lvs0</a>
+            <a href="https://x.com/l_vs">X</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 NYX · MIT · Zoe & Lévy · <em>Réinventer la machine en comprenant le courant.</em>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js + ScrollMagic-like observer -->
+  <script src="https://unpkg.com/[email protected]/build/three.min.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

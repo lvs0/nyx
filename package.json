@@ -1,0 +1,31 @@
+{
+  "name": "nyx",
+  "version": "0.1.0",
+  "description": "NYX — écosystème de souveraineté numérique (Vortex, Symbiote, Aegis, Nyx-IA, Nyx-Browser)",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8765 --directory site",
+    "lint:html": "html5validator --root site/index.html"
+  },
+  "keywords": [
+    "ecosystem",
+    "framework",
+    "design-system",
+    "tokens",
+    "decentralization",
+    "self-sovereign",
+    "rust",
+    "webaudit"
+  ],
+  "license": "MIT",
+  "author": "Zoe & Lévy",
+  "year": 2026,
+  "files": [
+    "brand/",
+    "site/",
+    "components/",
+    "docs/",
+    "assets/"
+  ]
+}
