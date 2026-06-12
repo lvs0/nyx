@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nyx-Browser — concept</title>
+  <link rel="stylesheet" href="brand/tokens.css" />
+  <link rel="stylesheet" href="browser.css" />
+</head>
+<body>
+  <header class="nb-header">
+    <a href="/nyx/" class="logo"><span>●</span> NYX · concept</a>
+    <a href="/nyx/#ecosystem" class="back">← retour écosystème</a>
+  </header>
+
+  <section class="nb-hero">
+    <h1>Nyx-Browser.</h1>
+    <p class="lede">
+      Le web tel qu'il aurait dû l'être : sans cookies tiers, sans
+      fingerprint, sans pré-chargement caché. Un navigateur où ta navigation
+      n'est pas un produit que d'autres achètent.
+    </p>
+    <div class="nb-stats">
+      <div><b>0</b><span>cookies tiers par défaut</span></div>
+      <div><b>0</b><span>pre-fingerprint passif</span></div>
+      <div><b>1</b><span>profil = toi seul</span></div>
+    </div>
+  </section>
+
+  <!-- ────── Mockup browser scrollable ────── -->
+  <section class="browser-mockup">
+    <div class="window chrome">
+      <div class="window-chrome">
+        <div class="traffic">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="url-bar">
+          <span class="lock">🔒</span>
+          <input value="https://nyx-browse.example/article/le-piratage-de-votre-attention" readonly />
+          <span class="shield">🛡</span>
+        </div>
+        <div class="window-actions">
+          <span class="badge">NYX-Browser</span>
+        </div>
+      </div>
+      <div class="window-toolbar">
+        <button class="tool"><</button>
+        <button class="tool" disabled>></button>
+        <button class="tool">⟳</button>
+        <span class="shield-counter">12 traqueurs bloqués · 0 autorisés</span>
+      </div>
+      <div class="window-content">
+        <h2>Comment un site web voit ton attention</h2>
+        <p class="lead">
+          En moyenne, un site grand public exécute <strong>47 scripts
+          distincts</strong> à chaque chargement. Sept d'entre eux observent
+          ta souris en temps réel, quatre autres synchronisent tes frappes
+          avec des serveurs tiers.
+        </p>
+        <p>
+          Tu n'as rien demandé. Tu as juste ouvert une page.
+        </p>
+
+        <aside class="blocked-panel">
+          <h3>🛡 Blocages actifs (cette page — 12)</h3>
+          <ul>
+            <li><span class="b-name">graph.facebook.com</span><span class="b-reason">pixel publicitaire</span></li>
+            <li><span class="b-name">google-analytics.com</span><span class="b-reason">telemetry session</span></li>
+            <li><span class="b-name">hotjar.com</span><span class="b-reason">enregistrement souris</span></li>
+            <li><span class="b-name">doubleclick.net</span><span class="b-reason">publicité ciblée</span></li>
+            <li><span class="b-name">scorecardresearch.com</span><span class="b-reason">profilage comportemental</span></li>
+            <li><span class="b-name">criteo.com</span><span class="b-reason">retargeting persistent</span></li>
+            <li>+6 autres</li>
+          </ul>
+        </aside>
+
+        <h3>Ce que tu gagnes</h3>
+        <div class="benefits">
+          <div class="benefit">
+            <h4>Temps de chargement réduit</h4>
+            <p>Sans 47 scripts bloqués, une page moyenne charge 3.2× plus vite (mesure interne).</p>
+          </div>
+          <div class="benefit">
+            <h4>Pas de "pêche au clic"</h4>
+            <p>Sans pixel de conversion, on ne te pousse pas à cliquer par culpabilité.</p>
+          </div>
+          <div class="benefit">
+            <h4>Mémoire du navigateur réduite</h4>
+            <p>En moyenne, 280 Mo de RAM économisés sur 10 onglets ouverts.</p>
+          </div>
+        </div>
+
+        <p class="end-quote">
+          Un navigateur qui ne te profile pas n'est pas un luxe — c'est le
+          minimum de respect qu'on te doit.
+        </p>
+      </div>
+      <div class="window-statusbar">
+        <span>✓ Profil propre</span>
+        <span>·</span>
+        <span>📡 Aucun pré-chargement tiers</span>
+        <span>·</span>
+        <span>🔒 TLS 1.3 forcé</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="nb-pillars">
+    <div class="pillar">
+      <h3>1 · Zéro cookie tiers par défaut</h3>
+      <p>
+        Tu ne verras pas de bannière « accepter les cookies ». C'est le
+        navigateur qui décide, pas le site. Aucune exception.
+      </p>
+    </div>
+    <div class="pillar">
+      <h3>2 · Anti-fingerprint passif</h3>
+      <p>
+        Canvas, audio, WebGL, polices : le navigateur standardise ce qu'il
+        renvoie pour que tu sois statistiquement indistinguable.
+      </p>
+    </div>
+    <div class="pillar">
+      <h3>3 · Profils isolés par onglet</h3>
+      <p>
+        Chaque onglet ne partage pas son localStorage avec ses siblings.
+        Un onglet = une identité séparée.
+      </p>
+    </div>
+    <div class="pillar">
+      <h3>4 · Profil exportable</h3>
+      <p>
+        Tu décides où vivent tes signets, ton historique, tes mots de passe.
+        Chiffrés localement, à toi.
+      </p>
+    </div>
+  </section>
+
+  <section class="nb-cta">
+    <h2>Le navigateur est encore un concept.</h2>
+    <p>
+      Si ce projet te parle, tu peux l'accélérer. Concept à explorer :
+      Chromium forké + extension privacy-core, ou réécriture depuis un
+      moteur léger comme Servo (Mozilla).
+    </p>
+    <a href="https://github.com/lvs0" class="btn">Rejoindre la roadmap →</a>
+  </section>
+
+  <footer class="footer">
+    NYX — Lévy & Zoe · 12 juin 2026
+  </footer>
+</body>
+</html>

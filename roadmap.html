@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NYX · Roadmap</title>
+  <link rel="stylesheet" href="brand/tokens.css">
+  <link rel="stylesheet" href="roadmap.css">
+</head>
+<body>
+  <header class="rm-header">
+    <a href="index.html" class="back">← écosystème</a>
+    <span class="logo">NYX · roadmap</span>
+    <span class="sub">v0.1 · 12 juin 2026</span>
+  </header>
+
+  <section class="rm-hero">
+    <h1>Le futur ne se demande pas. Il se construit.</h1>
+    <p class="lede">
+      Notre feuille de route — ce qui est en ligne, ce qui démarre
+      demain, ce qui demande encore six mois. Aucune ligne n'est
+      promesses ; ce sont des jalons.
+    </p>
+  </section>
+
+  <section class="timeline">
+    <!-- Vortex -->
+    <div class="t-item status-shipped">
+      <div class="t-pole"></div>
+      <div class="t-content">
+        <div class="t-meta">
+          <span class="t-status">SHIPPED</span>
+          <span class="t-date">2026 Q2</span>
+        </div>
+        <h3>Vortex · v0.1</h3>
+        <p>
+          Patch Windows bas-niveau. Rust + PowerShell fallback.
+          Modes : apply, restore, info, dash, protect.
+          Compatible Windows 11. Binaire ~6 Mo.
+        </p>
+        <ul class="t-targets">
+          <li>✓ Power plan Ultimate Performance</li>
+          <li>✓ HAGS + GPU priority élevée</li>
+          <li>✓ Working-set trimming (RAM)</li>
+          <li>✓ Nagle + network throttling off</li>
+          <li>✓ NSIS installer ou portable 7z SFX</li>
+        </ul>
+        <a href="https://github.com/lvs0/vortex" class="t-link">Voir le dépôt →</a>
+      </div>
+    </div>
+
+    <!-- Symbiote -->
+    <div class="t-item status-shipped">
+      <div class="t-pole"></div>
+      <div class="t-content">
+        <div class="t-meta">
+          <span class="t-status">SHIPPED</span>
+          <span class="t-date">2026 Q2</span>
+        </div>
+        <h3>Symbiote · v0.1</h3>
+        <p>
+          Simulateur 3D de l'ère simbiotique. 4 prototypes matériels
+          quantifiés : plaque vivante, maillage décentralisé, HBM+TMFC,
+          neuromorphique.
+        </p>
+        <ul class="t-targets">
+          <li>✓ WebGL + Three.js 0.165 (zéro build)</li>
+          <li>✓ Métriques live (latence, TFLOPs, parallélisme)</li>
+          <li>✓ Pulse arête dataflow (WebGL + shaders)</li>
+          <li>✓ Cross-link NYX via Web Component</li>
+        </ul>
+        <a href="https://lvs0.github.io/symbiote/" class="t-link">Lancer la simulation →</a>
+      </div>
+    </div>
+
+    <!-- NYX brand system -->
+    <div class="t-item status-shipped">
+      <div class="t-pole"></div>
+      <div class="t-content">
+        <div class="t-meta">
+          <span class="t-status">SHIPPED</span>
+          <span class="t-date">2026 Q2</span>
+        </div>
+        <h3>NYX · brand system v0.1</h3>
+        <p>
+          Tokens couleur, typo, motion. Brand book signé.
+          Web Components réutilisables : <nyx-logo />,
+          <nyx-modal />, <nyx-button />.
+        </p>
+        <ul class="t-targets">
+          <li>✓ 200+ tokens CSS dans -nyx-*</li>
+          <li>✓ Manifeste public</li>
+          <li>✓ Multi-format favicons + Open Graph</li>
+          <li>✓ Animation primitives (pulse, drift, shimmer)</li>
+        </ul>
+        <a href="https://github.com/lvs0/nyx" class="t-link">Voir le dépôt →</a>
+      </div>
+    </div>
+
+    <!-- Aegis -->
+    <div class="t-item status-in-progress">
+      <div class="t-pole"></div>
+      <div class="t-content">
+        <div class="t-meta">
+          <span class="t-status">EN COURS</span>
+          <span class="t-date">2026 Q3</span>
+        </div>
+        <h3>Aegis · v0.1 (étude)</h3>
+        <p>
+          Cloud chiffré post-quantique. Bâti sur Polygone.
+          Architecture Shamir 4/7 + ML-KEM-1024 + AES-256-GCM.
+          But : un cloud où l'opérateur n'a rien à voir dans les données.
+        </p>
+        <ul class="t-targets">
+          <li>✓ Spécification chiffrement (Polygone)</li>
+          <li>⏳ Protocol Sync 0/1 — peer-to-peer</li>
+          <li>⏳ CLI client (Linux/macOS/Windows)</li>
+          <li>⏳ App desktop Aegis UI (Tauri/Rust)</li>
+        </ul>
+        <a href="https://github.com/lvs0/polygone" class="t-link">Roadmap Polygone →</a>
+      </div>
+    </div>
+
+    <!-- Nyx-IA -->
+    <div class="t-item status-in-progress">
+      <div class="t-pole"></div>
+      <div class="t-content">
+        <div class="t-meta">
+          <span class="t-status">EN COURS</span>
+          <span class="t-date">2026 Q4</span>
+        </div>
+        <h3>Nyx-IA · v0.1 (assistant local)</h3>
+        <p>
+          Un assistant dont l'inférence vit chez toi. Multi-modèles Open
+          Source : Llama 3.3, Qwen3, Mistral, Nemotron-3. Hot-swap à
+          chaud. Mémoire chiffrée, zéro telemetry par défaut.
+        </p>
+        <ul class="t-targets">
+          <li>⏳ Connecteur vLLM local</li>
+          <li>⏳ Connecteur llama.cpp (CPU/GPU)</li>
+          <li>⏳ UI companion (Tauri)</li>
+          <li>⏳ Auto-évaluation de la cohérence (reflexion loop)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Nyx-Browser -->
+    <div class="t-item status-future">
+      <div class="t-pole"></div>
+      <div class="t-content">
+        <div class="t-meta">
+          <span class="t-status">CONCEPT</span>
+          <span class="t-date">2027 Q1</span>
+        </div>
+        <h3>Nyx-Browser · v0.1</h3>
+        <p>
+          Concept. Le navigateur comme medium, pas comme piège.
+          Zéro cookie tiers par défaut. Anti-fingerprint passif.
+          Profils isolés par onglet.
+        </p>
+        <ul class="t-targets">
+          <li>⏳ Aperçu UI (cf. <a href="browser.html">browser.html</a>)</li>
+          <li>⏳ Évaluation fork Chromium vs Servo</li>
+          <li>⏳ Extension privacy-core</li>
+          <li>⏳ Build prototype iOS/Android first</li>
+        </ul>
+        <a href="browser.html" class="t-link">Concept interactif →</a>
+      </div>
+    </div>
+
+    <!-- Sixth à inventer -->
+    <div class="t-item status-unknown">
+      <div class="t-pole"></div>
+      <div class="t-content">
+        <div class="t-meta">
+          <span class="t-status">À INVENTER</span>
+          <span class="t-date">—</span>
+        </div>
+        <h3>Sixième produit</h3>
+        <p>
+          Il manque quelque chose. Nous ne savons pas encore quoi.
+          Si tu sens ce que ça pourrait être, écris-nous.
+        </p>
+        <a href="https://t.me/l_vs" class="t-link">Proposer →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rm-footer">
+    NYX Lévy & Zoe · 12 juin 2026 · MIT · <a href="index.html">← écosystème</a>
+  </footer>
+</body>
+</html>

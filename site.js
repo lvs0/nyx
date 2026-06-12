@@ -128,6 +128,33 @@
       mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
     });
 
+    // ─── Raycaster pour les satellites ───
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+    const cvEl = canvas;
+    function pickHit(clientX, clientY) {
+      const rect = cvEl.getBoundingClientRect();
+      mouse.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((clientY - rect.top) / rect.height) * 2 + 1;
+      raycaster.setFromCamera(mouse, camera);
+      const hits = raycaster.intersectObjects(satellites, false);
+      return hits.length ? hits[0].object : null;
+    }
+    let hovered = null;
+    canvas.style.cursor = 'grab';
+    canvas.addEventListener('pointermove', (e) => {
+      const hit = pickHit(e.clientX, e.clientY);
+      if (hit !== hovered) {
+        if (hovered) hovered.scale.setScalar(1);
+        hovered = hit;
+        if (hovered) hovered.scale.setScalar(1.5);
+      }
+      canvas.style.cursor = hit ? 'pointer' : 'grab';
+    });
+    canvas.addEventListener('click', (e) => {
+      const hit = pickHit(e.clientX, e.clientY);
+      if (hit && window.NyxModal) window.NyxModal.open(hit.userData.name.toLowerCase());
+    });
     function animate(t) {
       requestAnimationFrame(animate);
       const time = t * 0.001;
