@@ -1,0 +1,55 @@
+// NYX Logo — Custom Element
+// Usage: <nyx-logo size="48"></nyx-logo> · <nyx-logo size="64" variant="mark"> · <nyx-logo size="120" theme="cyan">
+
+class NyxLogo extends HTMLElement {
+  static get observedAttributes() {
+    return ['size', 'variant', 'theme'];
+  }
+  connectedCallback() { this.render(); }
+  attributeChangedCallback() { this.render(); }
+  render() {
+    const size = parseInt(this.getAttribute('size') || '48', 10);
+    const variant = this.getAttribute('variant') || 'horizontal';
+    const themes = {
+      default: ['#00f5d4', '#9d4edd', '#ff3d8c'],
+      cyan:    ['#00f5d4', '#58ffe6'],
+      violet:  ['#9d4edd', '#ff3d8c'],
+      mono:    ['#b3b9cb', '#e7ebf5'],
+    };
+    const t = themes[this.getAttribute('theme')] || themes.default;
+    const gradId = 'nyx-g-' + Math.random().toString(36).slice(2, 8);
+    const stopCount = t.length;
+
+    const svg = variant === 'mark' ? `
+        <svg width="${size}" height="${size}" viewBox="0 0 256 256" aria-label="NYX mark" role="img">
+          <defs>
+            <linearGradient id="${gradId}" x1="0" y1="0" x2="1" y2="1">
+              ${t.map((c, i) => `<stop offset="${(i / (stopCount - 1)) * 100}%" stop-color="${c}"/>`).join('')}
+            </linearGradient>
+          </defs>
+          <circle cx="128" cy="128" r="110" stroke="url(#${gradId})" stroke-width="6" fill="none"/>
+          <path d="M 165 50 A 95 95 0 1 0 165 206 A 70 70 0 1 1 165 50 Z" fill="url(#${gradId})"/>
+          <circle cx="128" cy="128" r="8" fill="#05060a"/>
+        </svg>
+      ` : `
+        <svg viewBox="0 0 320 80" width="${size * 1.4}" height="${size}" aria-label="NYX" role="img">
+          <defs>
+            <linearGradient id="${gradId}" x1="0" y1="0" x2="1" y2="0">
+              ${t.map((c, i) => `<stop offset="${(i / (stopCount - 1)) * 100}%" stop-color="${c}"/>`).join('')}
+            </linearGradient>
+          </defs>
+          <g transform="translate(0, 5)">
+            <circle cx="35" cy="35" r="28" stroke="url(#${gradId})" stroke-width="2.5" fill="none"/>
+            <path d="M 50 12 A 28 28 0 1 0 50 58 A 20 20 0 1 1 50 12 Z" fill="url(#${gradId})"/>
+            <circle cx="35" cy="35" r="3" fill="#05060a"/>
+          </g>
+          <text x="80" y="55" font-family="'Space Grotesk', sans-serif" font-size="38" font-weight="700" letter-spacing="8" fill="url(#${gradId})">NYX</text>
+        </svg>
+      `;
+    this.innerHTML = svg;
+  }
+}
+
+if (!customElements.get('nyx-logo')) {
+  customElements.define('nyx-logo', NyxLogo);
+}
