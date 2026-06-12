@@ -642,3 +642,10 @@ a { color: inherit; text-decoration: none; }
   color: var(--nyx-void);
   border-color: var(--nyx-cyan);
 }
+
+
+/* Word-level reveal */
+.nyx-kinetic-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}

@@ -265,55 +265,44 @@
     });
   }
 
-  // Wire it on hero title gradient words
-  const heroGradient = document.querySelectorAll('.hero-title .nyx-italic-gradient, .hero-title b');
-  // Wrap each character for kinetic reveal
+  // ─── Hero title : word-level reveal (no char-splinter text) ───
+  // Le char-par-char casse l'accessibilité (text-to-speech) et l'indexation.
+  // On utilise plutôt "split par mot" : chaque mot prend sa place après un fade-up.
   const heroTitle = document.querySelector('.hero-title');
   if (heroTitle) {
-    // observer pour ne s'activer qu'à l'affichage
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          // wrap et reveal
-          // process tout le h1 sauf les word "zoom"
-          const targets = heroTitle.querySelectorAll(':scope > span, :scope > b, :scope > br, :scope > text');
-          // split text nodes only
-          const process = (node) => {
-            if (node.nodeType === 3) {
-              const text = node.textContent;
-              const tmp = document.createElement('span');
-              tmp.className = 'nyx-kinetic';
-              tmp.textContent = text;
-              const parent = node.parentNode;
-              parent.insertBefore(tmp, node);
-              tmp.style.display = 'inline-block';
-              tmp.style.perspective = '1200px';
-              tmp.textContent = '';
-              for (let i = 0; i < text.length; i++) {
-                const ch = text[i];
-                const span = document.createElement('span');
-                span.textContent = ch === ' ' ? '\u00A0' : ch;
-                span.style.display = 'inline-block';
-                span.style.transform = 'translateY(0.7em) rotateX(-65deg)';
-                span.style.opacity = '0';
-                span.style.transition = 'transform 1000ms cubic-bezier(0.16, 1, 0.3, 1), opacity 700ms cubic-bezier(0.16, 1, 0.3, 1)';
-                tmp.appendChild(span);
-                setTimeout(() => {
-                  span.style.transform = 'translateY(0) rotateX(0)';
-                  span.style.opacity = '1';
-                }, 500 + i * 18);
-              }
-              parent.removeChild(node);
-            }
-          };
-          // pour chaque enfant direct du hero-title qui est un text node, process
-          const walker = document.createTreeWalker(heroTitle, NodeFilter.SHOW_TEXT, null, false);
-          const textNodes = [];
-          let n; while ((n = walker.nextNode())) textNodes.push(n);
-          textNodes.forEach(process);
-          io.disconnect();
-        }
+    const textNodes = [];
+    const walker = document.createTreeWalker(heroTitle, NodeFilter.SHOW_TEXT, null, false);
+    let n;
+    while ((n = walker.nextNode())) textNodes.push(n);
+
+    if (textNodes.length) {
+      // wrap text nodes en <span class="nyx-kinetic-word"> pour pouvoir les animer
+      textNodes.forEach((node) => {
+        const t = node.textContent.trim();
+        if (!t) return;
+        const tmp = document.createElement('span');
+        tmp.className = 'nyx-kinetic-word';
+        tmp.textContent = t;
+        node.replaceWith(tmp);
       });
-    }, { threshold: 0.25 });
-    io.observe(heroTitle);
+
+      const words = heroTitle.querySelectorAll('.nyx-kinetic-word');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            words.forEach((w, i) => {
+              w.style.opacity = '0';
+              w.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                w.style.transition = 'opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 800ms cubic-bezier(0.16, 1, 0.3, 1)';
+                w.style.opacity = '1';
+                w.style.transform = 'translateY(0)';
+              }, 200 + i * 80);
+            });
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.18 });
+      io.observe(heroTitle);
+    }
   }
