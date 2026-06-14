@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta name="description" content="Roadmap publique de l'écosystème NYX : Vortex (shipped), Symbiote (shipped), Aegis (en cours), Nyx-IA, Nyx-Browser." />
+  <meta name="description" content="Roadmap publique de l'écosystème NYX : Vortex (shipped), Symbiote (shipped), Aegis (en cours), Nyx-Lab, Nyx-IA, Nyx-Browser." />
   <meta name="theme-color" content="#05060a" />
   <meta name="color-scheme" content="dark" />
   <meta name="robots" content="index,follow" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="NYX · Roadmap" />
-  <meta property="og:description" content="Roadmap publique de l'écosystème NYX : Vortex (shipped), Symbiote (shipped), Aegis (en cours), Nyx-IA, Nyx-Browser." />
+  <meta property="og:description" content="Roadmap publique de l'écosystème NYX : Vortex (shipped), Symbiote (shipped), Aegis (en cours), Nyx-Lab, Nyx-IA, Nyx-Browser." />
   <meta property="og:url" content="https://lvs0.github.io/nyx/roadmap.html" />
   <meta property="og:image" content="https://lvs0.github.io/nyx/brand/og-image.png" />
   <meta property="og:locale" content="fr_FR" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="NYX · Roadmap" />
-  <meta name="twitter:description" content="Roadmap publique de l'écosystème NYX : Vortex (shipped), Symbiote (shipped), Aegis (en cours), Nyx-IA, Nyx-Browser." />
+  <meta name="twitter:description" content="Roadmap publique de l'écosystème NYX : Vortex (shipped), Symbiote (shipped), Aegis (en cours), Nyx-Lab, Nyx-IA, Nyx-Browser." />
   <meta name="twitter:image" content="https://lvs0.github.io/nyx/brand/og-image.png" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="brand/favicon-32.png?v=1" />
@@ -25,12 +25,13 @@
   <title>NYX · Roadmap</title>
   <link rel="stylesheet" href="brand/tokens.css">
   <link rel="stylesheet" href="roadmap.css">
+  <script src="components/nyx-badge.js" defer></script>
 </head>
 <body>
   <header class="rm-header">
     <a href="index.html" class="back">← écosystème</a>
     <span class="logo">NYX · roadmap</span>
-    <span class="sub">v0.1 · 12 juin 2026</span>
+    <span class="sub">v0.1 · 14 juin 2026</span>
   </header>
 
   <section class="rm-hero">
@@ -48,7 +49,7 @@
       <div class="t-pole"></div>
       <div class="t-content">
         <div class="t-meta">
-          <span class="t-status">SHIPPED</span>
+          <nyx-badge status="shipped" label="SHIPPED"></nyx-badge>
           <span class="t-date">2026 Q2</span>
         </div>
         <h3>Vortex · v0.1</h3>
@@ -73,7 +74,7 @@
       <div class="t-pole"></div>
       <div class="t-content">
         <div class="t-meta">
-          <span class="t-status">SHIPPED</span>
+          <nyx-badge status="shipped" label="SHIPPED"></nyx-badge>
           <span class="t-date">2026 Q2</span>
         </div>
         <h3>Symbiote · v0.1</h3>
@@ -97,7 +98,7 @@
       <div class="t-pole"></div>
       <div class="t-content">
         <div class="t-meta">
-          <span class="t-status">SHIPPED</span>
+          <nyx-badge status="shipped" label="SHIPPED"></nyx-badge>
           <span class="t-date">2026 Q2</span>
         </div>
         <h3>NYX · brand system v0.1</h3>
@@ -121,7 +122,7 @@
       <div class="t-pole"></div>
       <div class="t-content">
         <div class="t-meta">
-          <span class="t-status">EN COURS</span>
+          <nyx-badge status="in-progress" label="EN COURS"></nyx-badge>
           <span class="t-date">2026 Q3</span>
         </div>
         <h3>Aegis · v0.1 (étude)</h3>
@@ -140,12 +141,36 @@
       </div>
     </div>
 
+    <!-- NYX-Lab -->
+    <div class="t-item status-in-progress">
+      <div class="t-pole"></div>
+      <div class="t-content">
+        <div class="t-meta">
+          <nyx-badge status="in-progress" label="EN COURS"></nyx-badge>
+          <span class="t-date">2026 Q3</span>
+        </div>
+        <h3>NYX · Lab v0.1 (expérimentation)</h3>
+        <p>
+          Atelier d'exploration pour l'écosystème. Playground interactif
+          des composants NYX, générateur de tokens, et galerie des
+          Web Components live. Le terrain de jeu officiel de NYX.
+        </p>
+        <ul class="t-targets">
+          <li>⏳ Playground composants (nyx-badge, nyx-tabs, …)</li>
+          <li>⏳ Générateur de tokens (preview live)</li>
+          <li>⏳ Galerie Web Components intégrée</li>
+          <li>⏳ Export config pour Vortex / Aegis</li>
+        </ul>
+        <a href="components.html" class="t-link">Composants existants →</a>
+      </div>
+    </div>
+
     <!-- Nyx-IA -->
     <div class="t-item status-in-progress">
       <div class="t-pole"></div>
       <div class="t-content">
         <div class="t-meta">
-          <span class="t-status">EN COURS</span>
+          <nyx-badge status="in-progress" label="EN COURS"></nyx-badge>
           <span class="t-date">2026 Q4</span>
         </div>
         <h3>Nyx-IA · v0.1 (assistant local)</h3>
@@ -168,7 +193,7 @@
       <div class="t-pole"></div>
       <div class="t-content">
         <div class="t-meta">
-          <span class="t-status">CONCEPT</span>
+          <nyx-badge status="concept" label="CONCEPT"></nyx-badge>
           <span class="t-date">2027 Q1</span>
         </div>
         <h3>Nyx-Browser · v0.1</h3>
@@ -187,15 +212,15 @@
       </div>
     </div>
 
-    <!-- Sixth à inventer -->
+    <!-- Seventh à inventer -->
     <div class="t-item status-unknown">
       <div class="t-pole"></div>
       <div class="t-content">
         <div class="t-meta">
-          <span class="t-status">À INVENTER</span>
+          <nyx-badge status="unknown" label="À INVENTER"></nyx-badge>
           <span class="t-date">—</span>
         </div>
-        <h3>Sixième produit</h3>
+        <h3>Septième produit</h3>
         <p>
           Il manque quelque chose. Nous ne savons pas encore quoi.
           Si tu sens ce que ça pourrait être, écris-nous.
@@ -206,7 +231,7 @@
   </section>
 
   <footer class="rm-footer">
-    NYX Lévy & Zoe · 12 juin 2026 · MIT · <a href="index.html">← écosystème</a>
+    NYX Lévy & Zoe · 14 juin 2026 · MIT · <a href="index.html">← écosystème</a>
   </footer>
 </body>
 </html>
