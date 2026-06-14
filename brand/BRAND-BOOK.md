@@ -4,6 +4,8 @@
 
 NYX est la marque-fleuve qui regroupe les produits de l'écosystème : **Vortex** (OS), **Symbiote** (3D), **Aegis** (cloud chiffré), **Nyx-IA** (assistant), **Nyx-Browser** (UI).
 
+> **v0.2** — ajout des tokens shadow & glow violets (data/IA), variante `.nyx-card--violet`.
+
 ## 1. Pourquoi NYX
 
 - **Nyx** : déesse grecque de la nuit, mère du Jour et de l'Aurore — pas opposée à la lumière, elle l'a *enfantée*.
@@ -31,9 +33,9 @@ NYX est la marque-fleuve qui regroupe les produits de l'écosystème : **Vortex*
 | `--nyx-bone` | `#b3b9cb` | Texte secondaire |
 | `--nyx-snow` | `#e7ebf5` | Texte principal |
 | `--nyx-cyan` | `#00f5d4` | Action primaire, signal |
-| `--nyx-magenta` | `#ff3d8c` | Alerte, focus |
-| `--nyx-violet` | `#9d4edd` | Data, IA |
-| `--nyx-amber` | `#fcbf49` | Warning, hardware |
+| Magenta | `--nyx-magenta` | `#ff3d8c` | Alerte, focus |
+| Violet | `--nyx-violet` | `#9d4edd` | Data, IA |
+| Amber | `--nyx-amber` | `#fcbf49` | Warning, hardware |
 
 ## 4. Gradient signature
 
@@ -42,6 +44,16 @@ linear-gradient(135deg, #00f5d4 0%, #9d4edd 50%, #ff3d8c 100%)
 ```
 
 Utilisé pour : le wordmark, les boutons "électriques", les accents mis en lumière, les callouts IA.
+
+## 4b. Shadows & glows
+
+| Token | Usage |
+|-------|-------|
+| `--nyx-shadow-1` / `-2` / `-3` | Élévations classiques (1, 6, 16 px blur) |
+| `--nyx-shadow-hero` | Halo cyan (120 px) — hero, sections actives |
+| `--nyx-shadow-mag` | Halo magenta (120 px) — alertes, focus destructif |
+| `--nyx-shadow-violet` | Halo violet (120 px) — modules data/IA |
+| `--nyx-glow-violet` | Bordure + halo pour cards IA en surbrillance |
 
 ## 5. Typographie
 

@@ -77,6 +77,10 @@
   --nyx-shadow-3:      0 16px 48px rgba(0,0,0,0.6);
   --nyx-shadow-hero:   0 30px 120px rgba(0,245,212,0.15);
   --nyx-shadow-mag:    0 30px 120px rgba(255,61,140,0.18);
+  --nyx-shadow-violet: 0 30px 120px rgba(157,78,221,0.18);
+
+  /* Glows — pour cards IA / data en focus */
+  --nyx-glow-violet:   0 0 0 1px rgba(157,78,221,0.25), 0 0 24px rgba(157,78,221,0.18);
 
   /* ───────────── MOTION TOKENS ─────────────── */
   /* Tous les timing/easing de l'écosystème */
@@ -189,6 +193,15 @@ body {
 .nyx-card:hover {
   transform: translateY(-4px);
   border-color: var(--nyx-border-cyan);
+}
+.nyx-card--violet {
+  background: linear-gradient(160deg, var(--nyx-graphite), var(--nyx-ink));
+  border: 1px solid rgba(157,78,221,0.18);
+}
+.nyx-card--violet:hover {
+  transform: translateY(-4px);
+  border-color: rgba(157,78,221,0.6);
+  box-shadow: var(--nyx-shadow-violet);
 }
 
 .nyx-btn {
