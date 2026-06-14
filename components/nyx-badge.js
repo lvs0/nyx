@@ -41,6 +41,11 @@ class NyxBadge extends HTMLElement {
         .nyx-badge--concept    { background: var(--nyx-violet, #9d4edd); color: var(--nyx-snow,  #e7ebf5); opacity: 0.75; }
         .nyx-badge--unknown    { background: var(--nyx-magenta,#ff3d8c); color: var(--nyx-void,  #05060a); animation: nyx-pulse 1.8s infinite; }
         .nyx-badge--wip        { background: var(--nyx-mist,   #444c63); color: var(--nyx-snow,  #e7ebf5); }
+
+        @keyframes nyx-pulse {
+          0%, 100% { opacity: 1; }
+          50%       { opacity: 0.55; }
+        }
       `;
       document.head.appendChild(s);
     }
